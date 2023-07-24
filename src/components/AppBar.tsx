@@ -11,9 +11,9 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import logo from "../images/praha_logo.png"
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['O městě', 'Potřebuji řešit', 'Doprava', 'Co dělat v Praze', 'Kontakty'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -42,7 +42,7 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <img src={logo} alt="logo" style={{ display: 'none', marginRight: '1rem' }} className="md:flex" />
           <Typography
             variant="h6"
             noWrap
@@ -98,7 +98,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <img src={logo} alt="logo" style={{ display: 'none', marginRight: '1rem' }} className="md:flex" />
           <Typography
             variant="h5"
             noWrap
