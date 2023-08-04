@@ -1,0 +1,22 @@
+/* Desktop version */
+.logo {
+    height: 54px;
+    width: 179px;
+}
+
+
+/* Tablet version */
+@media screen and (max-width: 1200px) {
+    .logo {
+        height: 47px;
+        width: 156px;
+    }
+}
+
+/* Mobile version */
+@media screen and (max-width: 800px) {
+    .logo {
+        height: 40px;
+        width: 134px;
+    }
+}

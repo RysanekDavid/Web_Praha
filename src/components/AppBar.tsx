@@ -14,6 +14,10 @@ import SearchBar from './SearchBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import "../styles/LogoSize.css"
+
+
+
 
 const pages = ['O městě', 'Potřebuji řešit','Doprava','Co dělat v Praze', 'Kontakty'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -23,7 +27,7 @@ function ResponsiveAppBar() {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
   
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -40,19 +44,19 @@ function ResponsiveAppBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+/*40 , 134  ---> Height + width for logo when on Phone */
   return (
     <AppBar position="static" sx={{ background: '#FFFFFF' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <img src={logo} alt="Logo" height={54} width={179}/>
+        <img src={logo} alt="Logo" className="logo" />
           <Box sx={{ flexGrow: 1, display:'flex'}}>
             <SearchBar />
           </Box>
           {isMobile ? (
             <>
               <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleOpenNavMenu}>
-                <MenuIcon />
+                <MenuIcon style={{color: "black"}}/>
               </IconButton>
               <Menu
                 id="menu-appbar"
