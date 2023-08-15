@@ -14,6 +14,7 @@ import SearchBar from './SearchBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import WeatherDisplay from "./WeatherDisplay";
 import "../styles/LogoSize.css"
 
 
@@ -44,13 +45,13 @@ function ResponsiveAppBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-/*40 , 134  ---> Height + width for logo when on Phone */
+
   return (
     <AppBar position="static" sx={{ background: '#FFFFFF' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <img src={logo} alt="Logo" className="logo" />
-          <Box sx={{ flexGrow: 1, display:'flex'}}>
+          <Box sx={{ flexGrow:0.95, display:'flex'}}>
             <SearchBar />
           </Box>
           {isMobile ? (
@@ -81,12 +82,12 @@ function ResponsiveAppBar() {
               </Menu>
             </>
           ) : (
-            <Box sx={{ flexGrow: 1, paddingRight: "200px", display: 'flex' }}>
+            <Box sx={{ flexGrow: 15, paddingRight: "200px", display: 'flex' }}>
               {pages.map((page) => (
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: '#45494f', display: 'block', fontWeight: "550", paddingLeft : "50px"}}
+                  sx={{ my: 2, color: '#45494f', display: 'block', fontWeight: "550", paddingLeft : "30px", whiteSpace: "nowrap"}}
                 >
                   {page}
                 </Button>
@@ -94,6 +95,7 @@ function ResponsiveAppBar() {
             </Box>
           )}
           <Box sx={{ flexGrow: 0, }}>
+            <WeatherDisplay city="Praha" />
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
               </IconButton>
