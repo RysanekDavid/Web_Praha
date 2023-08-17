@@ -1,3 +1,6 @@
+/*
+
+
 import React, { useState, useEffect } from 'react';
 
 interface WeatherDisplayProps {
@@ -29,9 +32,14 @@ interface WeatherDisplayProps {
     <div>
       <h3>Počasí v {city}</h3>
       <p>Teplota: {weatherData.main.temp}°C</p>
-      {/* Můžete zde přidat další informace o počasí podle toho, co vám API vrátí. */}
+      {}
     </div>
   );
 }
 
 export default WeatherDisplay;
+
+
+*/
+
+export{}

@@ -14,7 +14,7 @@ import SearchBar from './SearchBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import WeatherDisplay from "./WeatherDisplay";
+
 import "../styles/LogoSize.css"
 
 
@@ -95,7 +95,6 @@ function ResponsiveAppBar() {
             </Box>
           )}
           <Box sx={{ flexGrow: 0, }}>
-            <WeatherDisplay city="Praha" />
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
               </IconButton>
