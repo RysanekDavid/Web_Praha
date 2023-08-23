@@ -2,6 +2,7 @@ import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './App.css';
 import ResponsiveAppBar from "./components/AppBar"
+import ContentBox from './components/ContentBox';
 
 const customTheme = createTheme({
   breakpoints: {
@@ -19,7 +20,9 @@ const customTheme = createTheme({
 function App() {
   return (
   <ThemeProvider theme={customTheme}>
-    <ResponsiveAppBar></ResponsiveAppBar>   
+    <ResponsiveAppBar></ResponsiveAppBar>
+    
+    <ContentBox />   
   </ ThemeProvider > 
   );
 }

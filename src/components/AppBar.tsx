@@ -50,7 +50,7 @@ function ResponsiveAppBar() {
     <AppBar position="static" sx={{ background: '#FFFFFF' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <img src={logo} alt="Logo" className="logo" />
+        <img src={logo} alt="Logo" className="logo"  />
           <Box sx={{ flexGrow:0.95, display:'flex'}}>
             <SearchBar />
           </Box>
