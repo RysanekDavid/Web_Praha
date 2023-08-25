@@ -14,6 +14,10 @@ import SearchBar from './SearchBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTranslation } from "react-i18next";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import LanguageSelect from "./LanguageSelect"
+import WeatherWidget from './WeatherDisplay';
 
 import "../styles/LogoSize.css"
 
@@ -46,6 +50,24 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  const { i18n } = useTranslation();
+
+  const [languageMenuAnchor, setLanguageMenuAnchor] = React.useState<null | HTMLElement>(null);
+
+  const switchLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+    setLanguageMenuAnchor(null); // Zavřít menu po výběru jazyka
+  };
+
+  const openLanguageMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setLanguageMenuAnchor(event.currentTarget);
+  };
+
+  const closeLanguageMenu = () => { 
+    setLanguageMenuAnchor(null);
+  };
+
+
   return (
     <AppBar position="static" sx={{ background: '#FFFFFF' }}>
       <Container maxWidth="xl">
@@ -54,6 +76,11 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow:0.95, display:'flex'}}>
             <SearchBar />
           </Box>
+          
+          <Box sx={{ flexGrow: 0, marginLeft: 1, color: "black" }}>
+            <WeatherWidget />
+          </Box>
+
           {isMobile ? (
             <>
               <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleOpenNavMenu}>
@@ -93,7 +120,26 @@ function ResponsiveAppBar() {
                 </Button>
               ))}
             </Box>
+
           )}
+
+          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center'}}>
+            {/* Přepínač jazyků */}
+            <Button onClick={openLanguageMenu} endIcon={<KeyboardArrowDownIcon style={{ color: "black" }} />}  style={{ color: "black"}}>
+              {i18n.language === 'cs' ? 'CZ' : 'EN'}
+            </Button>
+            <Menu
+              anchorEl={languageMenuAnchor}
+              keepMounted
+              open={Boolean(languageMenuAnchor)}
+              onClose={closeLanguageMenu}
+            >
+              <MenuItem onClick={() => switchLanguage('cs')}>CZ</MenuItem>
+              <MenuItem onClick={() => switchLanguage('en')}>EN</MenuItem>
+            </Menu>
+          </Box>
+
+
           <Box sx={{ flexGrow: 0, }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

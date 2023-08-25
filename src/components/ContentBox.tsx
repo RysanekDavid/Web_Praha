@@ -8,7 +8,7 @@ export default function BoxSx() {
   return (
 
     <Box
-
+    
       sx={{
         border:1,
         borderRadius: 2,

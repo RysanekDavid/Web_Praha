@@ -1,45 +1,40 @@
-/*
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
+interface WeatherData {
+  main: {
+    temp: number;
+  };
+  weather: [{
+    description: string;
+    icon: string;
+  }];
+}
 
-import React, { useState, useEffect } from 'react';
+const API_KEY = '77ff43ea46b4e45d79321e46359a1d1b'; 
+const CITY = 'Prague'; 
 
-interface WeatherDisplayProps {
-    city: string;
-  }
-  
-  interface WeatherData {
-    main: {
-      temp: number;
-    };
-    
-  }
-
-  function WeatherDisplay({ city }: WeatherDisplayProps): JSX.Element {
-    const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
-  const API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
-  const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+const WeatherWidget: React.FC = () => {
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
 
   useEffect(() => {
-    fetch(URL)
-      .then(response => response.json())
-      .then(data => setWeatherData(data))
-      .catch(error => console.error('Chyba při načítání počasí:', error));
-  }, [city, URL]); // Dependency array obsahuje proměnné, které pokud se změní, vyvolají znovu načtení počasí.
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`)
+      .then(response => {
+        setWeatherData(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching weather data", error);
+      });
+  }, []);
 
-  if (!weatherData) return <div>Načítám počasí...</div>;
+  if (!weatherData) return <div>Loading...</div>;
 
   return (
     <div>
-      <h3>Počasí v {city}</h3>
-      <p>Teplota: {weatherData.main.temp}°C</p>
-      {}
+      {weatherData.main.temp}°C <br />
+      <img src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`} alt="Weather Icon" />
     </div>
   );
 }
 
-export default WeatherDisplay;
-
-
-*/
-
-export{}
+export default WeatherWidget;
