@@ -77,9 +77,7 @@ function ResponsiveAppBar() {
             <SearchBar />
           </Box>
           
-          <Box sx={{ flexGrow: 0, marginLeft: 1, color: "black" }}>
-            <WeatherWidget />
-          </Box>
+          
 
           {isMobile ? (
             <>
@@ -122,6 +120,11 @@ function ResponsiveAppBar() {
             </Box>
 
           )}
+
+
+          <Box sx={{ flexGrow: 0, color: "black" }}>
+            <WeatherWidget />
+          </Box>
 
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center'}}>
             {/* Přepínač jazyků */}
