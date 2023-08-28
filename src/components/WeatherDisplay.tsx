@@ -11,7 +11,7 @@ interface WeatherData {
   }];
 }
 
-const API_KEY = '77ff43ea46b4e45d79321e46359a1d1b'; 
+const API_KEY = '${process.env.WEATHER_API_KEY}';
 const CITY = 'Prague'; 
 
 const WeatherWidget: React.FC = () => {
