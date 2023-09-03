@@ -30,7 +30,7 @@ const WeatherWidget: React.FC = () => {
   if (!weatherData) return <div>Loading...</div>;
 
   return (
-    <div style={{display: 'flex', alignItems: 'center', paddingRight: 1}}>
+    <div style={{display: 'flex', alignItems: 'center', paddingRight: 100 }}>
       <b><span>{Math.round(weatherData.main.temp)}°C</span> </b>
       <img src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`} alt="Weather Icon" />
     </div>

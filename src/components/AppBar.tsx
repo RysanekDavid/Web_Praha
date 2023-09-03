@@ -17,6 +17,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTranslation } from "react-i18next";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import LanguageSelect from "./LanguageSelect"
+import LanguageIcon from '@mui/icons-material/Language';
 import WeatherWidget from './WeatherDisplay';
 import "../styles/LogoSize.css"
 
@@ -127,8 +128,12 @@ function ResponsiveAppBar() {
 
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center'}}>
             {/* Přepínač jazyků */}
-            <Button onClick={openLanguageMenu} endIcon={<KeyboardArrowDownIcon style={{ color: "black" }} />}  style={{ color: "black"}}>
-             <b> {i18n.language === 'cs' ? 'CZ' : 'EN'}</b>
+            <Button 
+                onClick={openLanguageMenu} 
+                startIcon={<LanguageIcon style={{ color: "black" }} />} 
+                endIcon={<KeyboardArrowDownIcon style={{ color: "black" }} />}  
+                style={{ color: "black" }}>
+                <b>{i18n.language === 'cs' ? 'CZ' : 'EN'}</b>
             </Button>
             <Menu
               anchorEl={languageMenuAnchor}
