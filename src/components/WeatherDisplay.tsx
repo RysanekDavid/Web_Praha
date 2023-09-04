@@ -4,6 +4,7 @@ import axios from 'axios';
 interface WeatherData {
   main: {
     temp: number;
+    temp_min: number;
   };
   weather: [{
     description: string;
@@ -30,9 +31,11 @@ const WeatherWidget: React.FC = () => {
   if (!weatherData) return <div>Loading...</div>;
 
   return (
-    <div style={{display: 'flex', alignItems: 'center', paddingRight: 100 }}>
-      <b><span>{Math.round(weatherData.main.temp)}°C</span> </b>
-      <img src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`} alt="Weather Icon" />
+    <div style={{display: 'flex', alignItems: 'center', paddingRight: 20 , paddingBottom: 2, fontSize: 18}}>
+      <b><span>{Math.round(weatherData.main.temp)}°C </span></b>
+
+
+      <img src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`} alt="Weather Icon" style={{width: 60, height: 60}}/>
     </div>
   );
 }

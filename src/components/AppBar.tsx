@@ -20,6 +20,7 @@ import LanguageSelect from "./LanguageSelect"
 import LanguageIcon from '@mui/icons-material/Language';
 import WeatherWidget from './WeatherDisplay';
 import "../styles/LogoSize.css"
+import VideocamIcon from '@mui/icons-material/Videocam';
 
 
 
@@ -107,12 +108,12 @@ function ResponsiveAppBar() {
               </Menu>
             </>
           ) : (
-            <Box sx={{ flexGrow: 5, paddingRight: "50px", display: 'flex' }}>
+            <Box sx={{ flexGrow: 5, paddingRight: "30px", display: 'flex', paddingTop: "4px" }}>
               {pages.map((page) => (
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: '#45494f', display: 'block', fontWeight: "550", paddingLeft : "30px", whiteSpace: "nowrap"}}
+                  sx={{ my: 2, color: '#45494f', display: 'block', fontWeight: "550", paddingLeft : "30px", whiteSpace: "nowrap", fontSize: "15px"}}
                 >
                   {page}
                 </Button>
@@ -121,8 +122,13 @@ function ResponsiveAppBar() {
 
           )}
 
+          <Box sx={{ flexGrow: 0, color: "black", marginRight: "20px" }}>
+            <VideocamIcon style = {{ fontSize: "30px", paddingTop: "5px" }} />
+          </Box>
 
-          <Box sx={{ flexGrow: 0, color: "black" }}>
+          <Box sx={{ height: "30px", width: "1px", backgroundColor: "black" }} />
+
+          <Box sx={{ flexGrow: 0, color: "black", paddingLeft: "15px"}}>
             <WeatherWidget />
           </Box>
 
@@ -130,9 +136,9 @@ function ResponsiveAppBar() {
             {/* Přepínač jazyků */}
             <Button 
                 onClick={openLanguageMenu} 
-                startIcon={<LanguageIcon style={{ color: "black" }} />} 
-                endIcon={<KeyboardArrowDownIcon style={{ color: "black" }} />}  
-                style={{ color: "black" }}>
+                startIcon={<LanguageIcon style={{ color: "black", fontSize: "25px" }} />} 
+                endIcon={<KeyboardArrowDownIcon style={{ color: "black", fontSize: "25px" }} />}  
+                style={{ color: "black" , fontSize: "16px"}}>
                 <b>{i18n.language === 'cs' ? 'CZ' : 'EN'}</b>
             </Button>
             <Menu
