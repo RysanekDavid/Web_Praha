@@ -1,6 +1,4 @@
 
-README.md
-
 Prague City Web Portal
 Welcome to the repository for the modern and fully-responsive web portal for the city of Prague! This project aims to be a significant step forward in delivering a seamless online experience to both residents and tourists, surpassing the existing web solutions in terms of design, functionality, and usability.
 
