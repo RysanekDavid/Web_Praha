@@ -2,7 +2,7 @@ import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './App.css';
 import ResponsiveAppBar from "./components/AppBar"
-import ContentBox from './components/ContentBox';
+import ContentBox from './components/Banner';
 
 
 

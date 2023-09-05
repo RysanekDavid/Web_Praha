@@ -16,17 +16,17 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTranslation } from "react-i18next";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import LanguageSelect from "./LanguageSelect"
 import LanguageIcon from '@mui/icons-material/Language';
 import WeatherWidget from './WeatherDisplay';
 import "../styles/LogoSize.css"
 import VideocamIcon from '@mui/icons-material/Videocam';
+import { Grid } from '@mui/material';
 
 
 
 
 const pages = ['O městě', 'Potřebuji řešit','Doprava','Co dělat v Praze', 'Kontakty'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -174,15 +174,32 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+             
             </Menu>
           </Box>
         </Toolbar>
       </Container>
+      
+  <Box sx={{ backgroundColor: '#413D3C', color: 'white', padding: '6px', whiteSpace: 'nowrap'}}>
+    
+    <Grid container spacing={2}>
+      <Grid item xs={3} sm={3} md={1} sx={{marginLeft: '0px'}}>800 100 000</Grid>
+
+      <Grid item xs={3} sm={3} md={1} sx={{marginLeft: '10px'}} >236 001 111 (ústředna)</Grid>
+
+      <Grid item xs={3} sm={3} md={1}sx={{marginLeft: '100px'}}>praha.eu</Grid>
+
+      <Grid item xs={3} sm={3} md={1}sx={{marginLeft: '10px'}}>e-podatelna</Grid>
+      
+      <Grid item xs={3} sm={3} md={1}sx={{marginLeft: '10px'}}>info@praha.eu</Grid>
+      
+      <Grid item xs={3} sm={3} md={1}sx={{marginLeft: '10px'}}>Portál Pražana</Grid>
+      
+      <Grid item xs={3} sm={3} md={1}sx={{marginLeft: '10px'}}>adresář zaměstnanců</Grid>
+    </Grid>
+      
+  </Box>
+
     </AppBar>
   );
 }
