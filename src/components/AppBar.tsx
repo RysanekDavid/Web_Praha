@@ -17,9 +17,14 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTranslation } from "react-i18next";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import LanguageIcon from '@mui/icons-material/Language';
+import VideocamIcon from '@mui/icons-material/Videocam';
+import CallIcon from '@mui/icons-material/Call';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import EmailIcon from '@mui/icons-material/Email';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 import WeatherWidget from './WeatherDisplay';
 import "../styles/LogoSize.css"
-import VideocamIcon from '@mui/icons-material/Videocam';
 import { Grid } from '@mui/material';
 
 
@@ -180,22 +185,22 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
       
-  <Box sx={{ backgroundColor: '#413D3C', color: 'white', padding: '6px', whiteSpace: 'nowrap'}}>
+  <Box sx={{ backgroundColor: '#413D3C', color: 'white', padding: '4px', whiteSpace: 'nowrap'}}>
     
-    <Grid container spacing={2}>
-      <Grid item xs={3} sm={3} md={1} sx={{marginLeft: '0px'}}>800 100 000</Grid>
+    <Grid container spacing={1} justifyContent = 'space-between'sx = {{flexWrap: 'wrap', paddingLeft: '10%', paddingRight: '18%'}} >
+      <Grid item xs={3} sm={3} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}><CallIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}> </CallIcon>800 100 000</Grid>
 
-      <Grid item xs={3} sm={3} md={1} sx={{marginLeft: '10px'}} >236 001 111 (ústředna)</Grid>
+      <Grid item xs={3} sm={3} md={2} lg={1} xl={1}  sx={{display: 'flex', alignItems: 'center'}} ><CallIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}></CallIcon>236 001 111 (ústředna) </Grid>
 
-      <Grid item xs={3} sm={3} md={1}sx={{marginLeft: '100px'}}>praha.eu</Grid>
+      <Grid item xs={3} sm={3} md={2} lg={1} xl={1} sx={{marginLeft: '85px', display: 'flex', alignItems: 'center'}}><FacebookIcon sx={{width: '23px', height: '23px',marginRight: '5px'}}></FacebookIcon>praha.eu</Grid>
 
-      <Grid item xs={3} sm={3} md={1}sx={{marginLeft: '10px'}}>e-podatelna</Grid>
+      <Grid item xs={3} sm={3} md={2} lg={1} xl={1} sx={{marginLeft:'-2px' ,display: 'flex', alignItems: 'center'}}><EmailIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}></EmailIcon>e-podatelna</Grid>
       
-      <Grid item xs={3} sm={3} md={1}sx={{marginLeft: '10px'}}>info@praha.eu</Grid>
+      <Grid item xs={3} sm={3} md={2} lg={1} xl={1} sx={{display: 'flex', alignItems: 'center'}}><EmailIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}></EmailIcon>info@praha.eu</Grid>
       
-      <Grid item xs={3} sm={3} md={1}sx={{marginLeft: '10px'}}>Portál Pražana</Grid>
+      <Grid item xs={3} sm={3} md={2} lg={1} xl={1} sx={{display: 'flex', alignItems: 'center'}}><AccountBoxIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}> </AccountBoxIcon>Portál Pražana</Grid>
       
-      <Grid item xs={3} sm={3} md={1}sx={{marginLeft: '10px'}}>adresář zaměstnanců</Grid>
+      <Grid item xs={3} sm={3} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}><MenuBookIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}> </MenuBookIcon>adresář zaměstnanců</Grid>
     </Grid>
       
   </Box>
