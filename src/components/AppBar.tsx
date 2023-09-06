@@ -187,20 +187,20 @@ function ResponsiveAppBar() {
       
   <Box sx={{ backgroundColor: '#413D3C', color: 'white', padding: '4px', whiteSpace: 'nowrap'}}>
     
-    <Grid container spacing={1} justifyContent = 'space-between'sx = {{flexWrap: 'wrap', paddingLeft: '10%', paddingRight: '18%'}} >
-      <Grid item xs={3} sm={3} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}><CallIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}> </CallIcon>800 100 000</Grid>
+    <Grid container spacing={1} justifyContent = 'space-between'sx = {{flexWrap: 'wrap', paddingLeft: '10%', paddingRight: '12%'}} >
+      <Grid item xs={6} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}><CallIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}> </CallIcon>800 100 000</Grid>
 
-      <Grid item xs={3} sm={3} md={2} lg={1} xl={1}  sx={{display: 'flex', alignItems: 'center'}} ><CallIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}></CallIcon>236 001 111 (ústředna) </Grid>
+      <Grid item xs={6} sm={2} md={2} lg={1} xl={1}  sx={{display: 'flex', alignItems: 'center'}} ><CallIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}></CallIcon>236 001 111 (ústředna) </Grid>
 
-      <Grid item xs={3} sm={3} md={2} lg={1} xl={1} sx={{marginLeft: '85px', display: 'flex', alignItems: 'center'}}><FacebookIcon sx={{width: '23px', height: '23px',marginRight: '5px'}}></FacebookIcon>praha.eu</Grid>
+      <Grid item xs={6} sm={3} md={2} lg={1} xl={1} sx={{marginLeft: '85px', display: 'flex', alignItems: 'center'}}><FacebookIcon sx={{width: '23px', height: '23px',marginRight: '5px'}}></FacebookIcon>praha.eu</Grid>
 
-      <Grid item xs={3} sm={3} md={2} lg={1} xl={1} sx={{marginLeft:'-2px' ,display: 'flex', alignItems: 'center'}}><EmailIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}></EmailIcon>e-podatelna</Grid>
+      <Grid item xs={6} sm={3} md={2} lg={1} xl={1} sx={{marginLeft:'-2px' ,display: 'flex', alignItems: 'center'}}><EmailIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}></EmailIcon>e-podatelna</Grid>
       
-      <Grid item xs={3} sm={3} md={2} lg={1} xl={1} sx={{display: 'flex', alignItems: 'center'}}><EmailIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}></EmailIcon>info@praha.eu</Grid>
+      <Grid item xs={6} sm={3} md={2} lg={1} xl={1} sx={{display: 'flex', alignItems: 'center'}}><EmailIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}></EmailIcon>info@praha.eu</Grid>
       
-      <Grid item xs={3} sm={3} md={2} lg={1} xl={1} sx={{display: 'flex', alignItems: 'center'}}><AccountBoxIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}> </AccountBoxIcon>Portál Pražana</Grid>
+      <Grid item xs={6} sm={3} md={2} lg={1} xl={1} sx={{display: 'flex', alignItems: 'center'}}><AccountBoxIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}> </AccountBoxIcon>Portál Pražana</Grid>
       
-      <Grid item xs={3} sm={3} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}><MenuBookIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}> </MenuBookIcon>adresář zaměstnanců</Grid>
+      <Grid item xs={6} sm={3} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}><MenuBookIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}> </MenuBookIcon>adresář zaměstnanců</Grid>
     </Grid>
       
   </Box>
