@@ -185,10 +185,10 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
       
-      <Box sx={{ backgroundColor: '#413D3C', color: 'white', paddingBottom: '2px', whiteSpace: 'nowrap'}}>
-      <Grid container spacing={1} justifyContent="space-between" sx={{flexWrap: 'wrap', paddingLeft: '10%', paddingRight: '16%'}}>
+      <Box sx={{ backgroundColor: '#413D3C', color: 'white', paddingBottom: '3px',paddingTop: '3px', whiteSpace: 'nowrap'}}>
+      <Grid container spacing={0} justifyContent="space-between" sx={{flexWrap: 'wrap', paddingLeft: '10%', paddingRight: '14%'}}>
 
-        <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
+        <Grid item xs={1} sm={1} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
           <Tooltip title="800 100 000">
             <CallIcon sx={{width: '22px', height: '22px', marginRight: '5px'}} />
           </Tooltip>
@@ -197,7 +197,7 @@ function ResponsiveAppBar() {
           </Hidden>
         </Grid>
 
-        <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
+        <Grid item xs={1} sm={1} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
           <Tooltip title="236 001 111 (ústředna)">
             <CallIcon sx={{width: '22px', height: '22px', marginRight: '5px'}} />
           </Tooltip>
@@ -206,7 +206,7 @@ function ResponsiveAppBar() {
           </Hidden>
         </Grid>
 
-        <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center', marginLeft: '72px', marginRight: '-20px'}}>
+        <Grid item xs={1} sm={1} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center', marginLeft:{xs: '0px', sm: '0px', md: '72px', lg: '72px', xl: '72px'},  marginRight:{xs: '0px', sm: '0px', md: '-20px', lg: '-20px', xl: '-20px'}}}>
           <Tooltip title="praha.eu">
             <FacebookIcon sx={{width: '23px', height: '23px', marginRight: '5px'}} />
           </Tooltip>
@@ -215,7 +215,7 @@ function ResponsiveAppBar() {
           </Hidden>
         </Grid>
 
-        <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
+        <Grid item xs={1} sm={1} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
           <Tooltip title="e-podatelna">
             <EmailIcon sx={{width: '22px', height: '22px', marginRight: '5px'}} />
           </Tooltip>
@@ -224,7 +224,7 @@ function ResponsiveAppBar() {
           </Hidden>
         </Grid>
 
-        <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
+        <Grid item xs={1} sm={1} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
           <Tooltip title="info@praha.eu">
             <EmailIcon sx={{width: '22px', height: '22px', marginRight: '5px'}} />
           </Tooltip>
@@ -233,7 +233,7 @@ function ResponsiveAppBar() {
           </Hidden>
         </Grid>
 
-        <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
+        <Grid item xs={1} sm={1} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
           <Tooltip title="Portál Pražana">
             <AccountBoxIcon sx={{width: '22px', height: '22px', marginRight: '5px'}} />
           </Tooltip>
@@ -242,7 +242,7 @@ function ResponsiveAppBar() {
           </Hidden>
         </Grid>
 
-        <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
+        <Grid item xs={1} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
           <Tooltip title="adresář zaměstnanců">
             <MenuBookIcon sx={{width: '22px', height: '22px', marginRight: '5px'}} />
           </Tooltip>
