@@ -25,7 +25,7 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import WeatherWidget from './WeatherDisplay';
 import "../styles/LogoSize.css"
-import { Grid } from '@mui/material';
+import { Grid, Hidden } from '@mui/material';
 
 
 
@@ -185,25 +185,73 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
       
-  <Box sx={{ backgroundColor: '#413D3C', color: 'white', padding: '4px', whiteSpace: 'nowrap'}}>
-    
-    <Grid container spacing={1} justifyContent = 'space-between'sx = {{flexWrap: 'wrap', paddingLeft: '10%', paddingRight: '12%'}} >
-      <Grid item xs={6} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}><CallIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}> </CallIcon>800 100 000</Grid>
+      <Box sx={{ backgroundColor: '#413D3C', color: 'white', paddingBottom: '2px', whiteSpace: 'nowrap'}}>
+      <Grid container spacing={1} justifyContent="space-between" sx={{flexWrap: 'wrap', paddingLeft: '10%', paddingRight: '16%'}}>
 
-      <Grid item xs={6} sm={2} md={2} lg={1} xl={1}  sx={{display: 'flex', alignItems: 'center'}} ><CallIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}></CallIcon>236 001 111 (ústředna) </Grid>
+        <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
+          <Tooltip title="800 100 000">
+            <CallIcon sx={{width: '22px', height: '22px', marginRight: '5px'}} />
+          </Tooltip>
+          <Hidden mdDown>
+            800 100 000
+          </Hidden>
+        </Grid>
 
-      <Grid item xs={6} sm={3} md={2} lg={1} xl={1} sx={{marginLeft: '85px', display: 'flex', alignItems: 'center'}}><FacebookIcon sx={{width: '23px', height: '23px',marginRight: '5px'}}></FacebookIcon>praha.eu</Grid>
+        <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
+          <Tooltip title="236 001 111 (ústředna)">
+            <CallIcon sx={{width: '22px', height: '22px', marginRight: '5px'}} />
+          </Tooltip>
+          <Hidden mdDown>
+            236 001 111 (ústředna)
+          </Hidden>
+        </Grid>
 
-      <Grid item xs={6} sm={3} md={2} lg={1} xl={1} sx={{marginLeft:'-2px' ,display: 'flex', alignItems: 'center'}}><EmailIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}></EmailIcon>e-podatelna</Grid>
-      
-      <Grid item xs={6} sm={3} md={2} lg={1} xl={1} sx={{display: 'flex', alignItems: 'center'}}><EmailIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}></EmailIcon>info@praha.eu</Grid>
-      
-      <Grid item xs={6} sm={3} md={2} lg={1} xl={1} sx={{display: 'flex', alignItems: 'center'}}><AccountBoxIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}> </AccountBoxIcon>Portál Pražana</Grid>
-      
-      <Grid item xs={6} sm={3} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}><MenuBookIcon sx={{width: '22px', height: '22px',marginRight: '5px'}}> </MenuBookIcon>adresář zaměstnanců</Grid>
-    </Grid>
-      
-  </Box>
+        <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center', marginLeft: '72px', marginRight: '-20px'}}>
+          <Tooltip title="praha.eu">
+            <FacebookIcon sx={{width: '23px', height: '23px', marginRight: '5px'}} />
+          </Tooltip>
+          <Hidden mdDown>
+            praha.eu
+          </Hidden>
+        </Grid>
+
+        <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
+          <Tooltip title="e-podatelna">
+            <EmailIcon sx={{width: '22px', height: '22px', marginRight: '5px'}} />
+          </Tooltip>
+          <Hidden mdDown>
+            e-podatelna
+          </Hidden>
+        </Grid>
+
+        <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
+          <Tooltip title="info@praha.eu">
+            <EmailIcon sx={{width: '22px', height: '22px', marginRight: '5px'}} />
+          </Tooltip>
+          <Hidden mdDown>
+            info@praha.eu
+          </Hidden>
+        </Grid>
+
+        <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
+          <Tooltip title="Portál Pražana">
+            <AccountBoxIcon sx={{width: '22px', height: '22px', marginRight: '5px'}} />
+          </Tooltip>
+          <Hidden mdDown >
+            Portál Pražana
+          </Hidden>
+        </Grid>
+
+        <Grid item xs={2} sm={2} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
+          <Tooltip title="adresář zaměstnanců">
+            <MenuBookIcon sx={{width: '22px', height: '22px', marginRight: '5px'}} />
+          </Tooltip>
+          <Hidden mdDown>
+            adresář zaměstnanců
+          </Hidden>
+        </Grid>
+      </Grid>
+    </Box>
 
     </AppBar>
   );
