@@ -186,7 +186,7 @@ function ResponsiveAppBar() {
       </Container>
       
       <Box sx={{ backgroundColor: '#413D3C', color: 'white', paddingBottom: '3px',paddingTop: '3px', whiteSpace: 'nowrap'}}>
-      <Grid container spacing={0} justifyContent="space-between" sx={{flexWrap: 'wrap', paddingLeft: '10%', paddingRight: '14%'}}>
+      <Grid container spacing={0} justifyContent="space-between" sx={{flexWrap: 'wrap', paddingLeft: '8%', paddingRight: '10%'}}>
 
         <Grid item xs={1} sm={1} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
           <Tooltip title="800 100 000">
@@ -237,7 +237,7 @@ function ResponsiveAppBar() {
           <Tooltip title="Portál Pražana">
             <AccountBoxIcon sx={{width: '22px', height: '22px', marginRight: '5px'}} />
           </Tooltip>
-          <Hidden mdDown >
+          <Hidden lgDown >
             Portál Pražana
           </Hidden>
         </Grid>
@@ -246,7 +246,7 @@ function ResponsiveAppBar() {
           <Tooltip title="adresář zaměstnanců">
             <MenuBookIcon sx={{width: '22px', height: '22px', marginRight: '5px'}} />
           </Tooltip>
-          <Hidden mdDown>
+          <Hidden lgDown>
             adresář zaměstnanců
           </Hidden>
         </Grid>
