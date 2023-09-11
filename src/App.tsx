@@ -12,7 +12,7 @@ const customTheme = createTheme({
       xs: 0,
       sm: 600,
       md: 900,
-      lg: 1275, // Upravena hodnota
+      lg: 1388, // Upravena hodnota
       xl: 1536,
     },
   },

@@ -13,11 +13,11 @@ const Search = styled('div')(({ theme }) => ({
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
-  marginLeft: 40,
+  marginLeft: 30,
   marginBottom: 5,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(10),
+    marginLeft: theme.spacing(5),
     width: 'auto',
   },
   border: '1px solid black',
@@ -47,7 +47,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     width: '100%',
   
     [theme.breakpoints.up('xs')]: {
-    width: '8ch',
+      width: '8ch',
     '&:focus': {
       width: '12ch',
   }}, 
@@ -58,10 +58,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       width: '14ch',
   }},
 
-  [theme.breakpoints.up('lg')]: {
-    width: '12ch',
+  [theme.breakpoints.up('md')]: {
+
+    width: '20ch',
     '&:focus': {
-      width: '16ch',
+      width: '14ch',
+  }},
+
+  [theme.breakpoints.up('lg')]: {
+    width: '9ch',
+    '&:focus': {
+      width: '12ch',
   }},
 
   [theme.breakpoints.up('xl')]: {

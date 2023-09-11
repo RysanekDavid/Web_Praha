@@ -113,7 +113,7 @@ function ResponsiveAppBar() {
               </Menu>
             </>
           ) : (
-            <Box sx={{ flexGrow: 5, paddingRight: "30px", display: 'flex', paddingTop: "4px" }}>
+            <Box sx={{ flexGrow: 5, display: 'flex', alignItems: 'center', paddingTop: "2px" }}>
               {pages.map((page) => (
                 <Button
                   key={page}
@@ -127,14 +127,15 @@ function ResponsiveAppBar() {
 
           )}
 
-          <Box sx={{ flexGrow: 0, color: "black", marginRight: "20px" }}>
-            <VideocamIcon style = {{ fontSize: "30px", paddingTop: "5px" }} />
-          </Box>
+          <Box sx={{ flexGrow: 0, color: "black", marginRight: "0px" , marginLeft: "30px", display: 'flex', alignItems: 'center'}}>
 
-          <Box sx={{ height: "30px", width: "1px", backgroundColor: "black" }} />
+            <VideocamIcon style = {{ fontSize: "28px", paddingTop: "5px" }} />
 
-          <Box sx={{ flexGrow: 0, color: "black", paddingLeft: "15px"}}>
+          <Box sx={{ height: "30px", width: "1px", backgroundColor: "black", marginRight: "12px", marginLeft: "12px"}} />
+          
             <WeatherWidget />
+
+
           </Box>
 
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center'}}>
@@ -144,16 +145,17 @@ function ResponsiveAppBar() {
                 startIcon={<LanguageIcon style={{ color: "black", fontSize: "25px" }} />} 
                 endIcon={<KeyboardArrowDownIcon style={{ color: "black", fontSize: "25px" }} />}  
                 style={{ color: "black" , fontSize: "16px"}}>
-                <b>{i18n.language === 'cs' ? 'CZ' : 'EN'}</b>
+                <b>{i18n.language === 'cs' ? 'EN' : 'CZ'}</b>
             </Button>
-            <Menu
+            <Menu 
               anchorEl={languageMenuAnchor}
               keepMounted
               open={Boolean(languageMenuAnchor)}
               onClose={closeLanguageMenu}
             >
-              <MenuItem onClick={() => switchLanguage('cs')}>CZ</MenuItem>
               <MenuItem onClick={() => switchLanguage('en')}>EN</MenuItem>
+              <MenuItem onClick={() => switchLanguage('cs')}>CZ</MenuItem>
+              
             </Menu>
           </Box>
 
@@ -186,7 +188,7 @@ function ResponsiveAppBar() {
       </Container>
       
       <Box sx={{ backgroundColor: '#413D3C', color: 'white', paddingBottom: '3px',paddingTop: '3px', whiteSpace: 'nowrap'}}>
-      <Grid container spacing={0} justifyContent="space-between" sx={{flexWrap: 'wrap', paddingLeft: '8%', paddingRight: '10%'}}>
+      <Grid container spacing={0} justifyContent="space-between" sx={{flexWrap: 'wrap', paddingLeft: '6%', paddingRight: '10%'}}>
 
         <Grid item xs={1} sm={1} md={2} lg={1} xl={1} sx={{ display: 'flex', alignItems: 'center'}}>
           <Tooltip title="800 100 000">
