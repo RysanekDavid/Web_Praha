@@ -35,7 +35,7 @@ const pages = ['O městě', 'Potřebuji řešit','Doprava','Co dělat v Praze', 
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+ 
   
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
@@ -48,13 +48,6 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
 
   const { i18n } = useTranslation();
 
@@ -90,6 +83,9 @@ function ResponsiveAppBar() {
               <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleOpenNavMenu}>
                 <MenuIcon style={{color: "black"}}/>
               </IconButton>
+              <Hidden mdDown>
+                <Typography variant="h5" component="div" sx={{ color:'black', flexGrow: 1, marginLeft: "10px", whiteSpace: "nowrap" }}>Hlavní menu</Typography>
+              </Hidden>
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorElNav}
@@ -160,30 +156,7 @@ function ResponsiveAppBar() {
           </Box>
 
 
-          <Box sx={{ flexGrow: 0, }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-             
-            </Menu>
-          </Box>
+          
         </Toolbar>
       </Container>
       
