@@ -39,6 +39,7 @@ function ResponsiveAppBar() {
   
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -68,9 +69,9 @@ function ResponsiveAppBar() {
 
 
   return (
-    <AppBar position="static" sx={{ background: '#FFFFFF' }}>
+    <AppBar position="static" sx={{ background: '#FFFFFF', paddingTop: isSmallScreen ? '10px' : '0px' }}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{justifyContent: 'center', alignItems: 'center'}}>
         <img src={logo} alt="Logo" className="logo"  />
           <Box sx={{ flexGrow:0.95, display:'flex'}}>
             <SearchBar />
@@ -109,12 +110,12 @@ function ResponsiveAppBar() {
               </Menu>
             </>
           ) : (
-            <Box sx={{ flexGrow: 5, display: 'flex', alignItems: 'center', paddingTop: "2px" }}>
+            <Box sx={{ flexGrow: 5, display: 'flex', alignItems: 'center', paddingTop: "2px"}}>
               {pages.map((page) => (
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: '#45494f', display: 'block', fontWeight: "550", paddingLeft : "30px", whiteSpace: "nowrap", fontSize: "15px"}}
+                  sx={{ my:2, color: '#45494f', display: 'block', fontWeight: "550", paddingLeft : "30px", whiteSpace: "nowrap", fontSize: "15px"}}
                 >
                   {page}
                 </Button>
@@ -125,16 +126,15 @@ function ResponsiveAppBar() {
 
           <Box sx={{ flexGrow: 0, color: "black", marginRight: "0px" , marginLeft: "30px", display: 'flex', alignItems: 'center'}}>
 
-            <VideocamIcon style = {{ fontSize: "28px", paddingTop: "5px" }} />
+            <VideocamIcon style = {{ fontSize:isSmallScreen ? "24px" : "28px", paddingTop: "5px" }} />
 
           <Box sx={{ height: "30px", width: "1px", backgroundColor: "black", marginRight: "12px", marginLeft: "12px"}} />
           
-            <WeatherWidget />
-
+          <WeatherWidget />
 
           </Box>
 
-          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center'}}>
+          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center', marginRight: "5px"}}>
             {/* Přepínač jazyků */}
             <Button 
                 onClick={openLanguageMenu} 

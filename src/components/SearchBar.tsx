@@ -18,13 +18,14 @@ const Search = styled('div')(({ theme }) => ({
   marginLeft: 30,
   marginBottom: 5,
   width: '100%',
+  
   [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(5),
+    marginLeft: theme.spacing(4),
     width: 'auto',
   },
 
   [theme.breakpoints.down ('sm')]: {
-    marginLeft: theme.spacing(2),
+    marginLeft: theme.spacing(1),
     marginRight: theme.spacing(8),
     width: 'auto',
     border: 'none'
@@ -57,6 +58,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     width: '100%',
   
 
+    [theme.breakpoints.up('sm')]: {
+
+      width: '10ch',
+      '&:focus': {
+        width: '14ch',
+    }},
 
   [theme.breakpoints.up('md')]: {
 
@@ -105,7 +112,7 @@ const SearchBar = () => {
 
       {isMobile ? (
         <SearchIconWrapper >
-          <SearchIcon sx={{fontSize: 40}} />
+          <SearchIcon sx={{fontSize: 32}} />
         </SearchIconWrapper>
       ) : null}
 
