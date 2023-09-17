@@ -215,7 +215,7 @@ function ResponsiveAppBar() {
                   sx={{ color: "black", fontSize: "25px" }}
                 />
               }
-              style={{ color: "black", fontSize: "16px", paddingRight: "20%" }}
+              style={{ color: "black", fontSize: "16px", paddingRight: "50%" }}
             >
               <b>{i18n.language === "cs" ? "EN" : "CZ"}</b>
             </Button>
