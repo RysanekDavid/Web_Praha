@@ -200,22 +200,22 @@ function ResponsiveAppBar() {
             sx={{
               flexGrow: 0,
               display: "flex",
-
-              marginRight: "5px",
+              alignItems: "center",
+              paddingRight: "10px",
             }}
           >
             {/* Přepínač jazyků */}
             <Button
               onClick={openLanguageMenu}
               startIcon={
-                <LanguageIcon style={{ color: "black", fontSize: "25px" }} />
+                <LanguageIcon sx={{ color: "black", fontSize: "25px" }} />
               }
               endIcon={
                 <KeyboardArrowDownIcon
-                  style={{ color: "black", fontSize: "25px" }}
+                  sx={{ color: "black", fontSize: "25px" }}
                 />
               }
-              style={{ color: "black", fontSize: "16px" }}
+              style={{ color: "black", fontSize: "16px", paddingRight: "20%" }}
             >
               <b>{i18n.language === "cs" ? "EN" : "CZ"}</b>
             </Button>
@@ -245,7 +245,7 @@ function ResponsiveAppBar() {
           container
           spacing={0}
           justifyContent="space-between"
-          sx={{ flexWrap: "wrap", paddingLeft: "", paddingRight: "10%" }}
+          sx={{ flexWrap: "wrap", paddingRight: "10%" }}
         >
           <Hidden lgUp>
             <Accordion
