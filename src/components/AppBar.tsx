@@ -81,7 +81,10 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar
           disableGutters
-          sx={{ justifyContent: "center", alignItems: "center" }}
+          sx={{
+            justifyContent: "space-between",
+            alignItems: "space-between",
+          }}
         >
           <img src={logo} alt="Logo" className="logo" />
           <Box sx={{ flexGrow: 0.95, display: "flex" }}>
@@ -197,7 +200,7 @@ function ResponsiveAppBar() {
             sx={{
               flexGrow: 0,
               display: "flex",
-              alignItems: "center",
+
               marginRight: "5px",
             }}
           >
