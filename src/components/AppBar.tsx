@@ -87,7 +87,8 @@ function ResponsiveAppBar() {
           }}
         >
           <img src={logo} alt="Logo" className="logo" />
-          <Box sx={{ flexGrow: 0.95, display: "flex" }}>
+
+          <Box sx={{ flexGrow: 0.1, display: "flex" }}>
             <SearchBar />
           </Box>
 
@@ -99,7 +100,7 @@ function ResponsiveAppBar() {
                 aria-label="menu"
                 onClick={handleOpenNavMenu}
               >
-                <MenuIcon style={{ color: "black" }} />
+                <MenuIcon sx={{ color: "black", fontSize: "36px" }} />
               </IconButton>
               <Hidden mdDown>
                 <Typography
@@ -171,7 +172,7 @@ function ResponsiveAppBar() {
               flexGrow: 0,
               color: "black",
               marginRight: "0px",
-              marginLeft: "30px",
+              marginLeft: "10px",
               display: "flex",
               alignItems: "center",
             }}
@@ -215,7 +216,7 @@ function ResponsiveAppBar() {
                   sx={{ color: "black", fontSize: "25px" }}
                 />
               }
-              style={{ color: "black", fontSize: "16px", paddingRight: "50%" }}
+              style={{ color: "black", fontSize: "16px", paddingRight: "30%" }}
             >
               <b>{i18n.language === "cs" ? "EN" : "CZ"}</b>
             </Button>

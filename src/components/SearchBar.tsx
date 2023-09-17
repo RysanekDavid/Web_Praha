@@ -91,7 +91,7 @@ const SearchBar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isFull = useMediaQuery(theme.breakpoints.up("sm"));
-  const isMd = useMediaQuery(theme.breakpoints.up("md"));
+  // const isMd = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <Search>
@@ -110,7 +110,7 @@ const SearchBar = () => {
 
         {isMobile ? (
           <SearchIconWrapper>
-            <SearchIcon sx={{ fontSize: 32 }} />
+            <SearchIcon sx={{ fontSize: "40px" }} />
           </SearchIconWrapper>
         ) : null}
       </>
