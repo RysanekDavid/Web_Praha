@@ -100,22 +100,30 @@ function ResponsiveAppBar() {
                 aria-label="menu"
                 onClick={handleOpenNavMenu}
               >
-                <MenuIcon sx={{ color: "black", fontSize: "36px" }} />
+                <MenuIcon
+                  sx={{
+                    color: "black",
+                    fontSize: "36px",
+                    display: "flex",
+                  }}
+                />
               </IconButton>
+
               <Hidden mdDown>
                 <Typography
                   variant="h5"
                   component="div"
                   sx={{
                     color: "black",
-                    flexGrow: 1,
-                    marginLeft: "10px",
+                    marginLeft: "0px",
                     whiteSpace: "nowrap",
+                    display: "flex",
                   }}
                 >
                   Hlavní menu
                 </Typography>
               </Hidden>
+
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorElNav}
@@ -171,7 +179,7 @@ function ResponsiveAppBar() {
             sx={{
               flexGrow: 0,
               color: "black",
-              marginRight: "0px",
+              marginRight: isSmallScreen ? "2px" : "40px",
               marginLeft: "10px",
               display: "flex",
               alignItems: "center",
@@ -179,8 +187,8 @@ function ResponsiveAppBar() {
           >
             <VideocamIcon
               style={{
-                fontSize: isSmallScreen ? "24px" : "28px",
-                paddingTop: "5px",
+                fontSize: isSmallScreen ? "28px" : "30px",
+                paddingTop: isSmallScreen ? "0px" : "5px",
               }}
             />
 
@@ -216,7 +224,7 @@ function ResponsiveAppBar() {
                   sx={{ color: "black", fontSize: "25px" }}
                 />
               }
-              style={{ color: "black", fontSize: "16px", paddingRight: "30%" }}
+              style={{ color: "black", fontSize: "16px", paddingRight: "24%" }}
             >
               <b>{i18n.language === "cs" ? "EN" : "CZ"}</b>
             </Button>
