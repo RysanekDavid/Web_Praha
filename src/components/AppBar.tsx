@@ -82,7 +82,7 @@ function ResponsiveAppBar() {
         <Toolbar
           disableGutters
           sx={{
-            justifyContent: "space-between",
+            justifyContent: "center",
             alignItems: "space-between",
           }}
         >
@@ -118,6 +118,7 @@ function ResponsiveAppBar() {
                     marginLeft: "0px",
                     whiteSpace: "nowrap",
                     display: "flex",
+                    marginRight: "40px",
                   }}
                 >
                   Hlavní menu
@@ -164,7 +165,7 @@ function ResponsiveAppBar() {
                     color: "#45494f",
                     display: "block",
                     fontWeight: "550",
-                    paddingLeft: "30px",
+                    paddingLeft: "20px",
                     whiteSpace: "nowrap",
                     fontSize: "15px",
                   }}
@@ -224,7 +225,12 @@ function ResponsiveAppBar() {
                   sx={{ color: "black", fontSize: "25px" }}
                 />
               }
-              style={{ color: "black", fontSize: "16px", paddingRight: "24%" }}
+              style={{
+                color: "black",
+                fontSize: "16px",
+                paddingRight: isSmallScreen ? "0%" : "64%",
+                paddingLeft: isSmallScreen ? "50%" : "0%",
+              }}
             >
               <b>{i18n.language === "cs" ? "EN" : "CZ"}</b>
             </Button>
@@ -430,6 +436,7 @@ function ResponsiveAppBar() {
 
           <Grid
             paddingLeft="6%"
+            paddingRight="7%"
             item
             xs={1}
             sm={2}
