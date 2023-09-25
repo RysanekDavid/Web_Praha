@@ -7,7 +7,6 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../images/Portál-hlavního-města-Prahy.png";
 import SearchBar from "./SearchBar";
@@ -430,6 +429,7 @@ function ResponsiveAppBar() {
 
           <Grid
             paddingLeft="6%"
+            paddingRight="5%"
             item
             xs={1}
             sm={2}
