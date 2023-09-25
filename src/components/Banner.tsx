@@ -62,6 +62,13 @@ export default function BoxSx() {
 
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
 
+  // Přepne obrázek každé 3 sekundy
+
+  React.useEffect(() => {
+    const timer = setInterval(nextImage, 10000);
+    return () => clearInterval(timer);
+  }, [currentImageIndex]);
+
   //funkce přesunutí na další obrázek
   const nextImage = () => {
     if (currentImageIndex < images.length - 1) {
