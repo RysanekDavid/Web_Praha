@@ -2,12 +2,12 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import { Grid } from "@mui/material";
 import { styled } from "@mui/system";
 import bannerImage1 from "../images/Banner slide - 1.jpg";
 import bannerImage2 from "../images/Banner slide - 2.jpg";
 import bannerImage3 from "../images/Banner slide - 3.jpg";
-import bannerImage4 from "../images/Banner slide - 4.jpg";
 import bannerImage5 from "../images/Banner slide - 5.jpg";
 
 const OuterWrapperBack = styled("div")({
@@ -35,7 +35,7 @@ const IconWrapper = styled("div")({
   height: "34px",
   transition: "background-color 0.4s ease",
   cursor: "pointer",
-  backgroundColor: "rgba(0, 0, 0, 0.42)",
+  backgroundColor: "rgba(0, 0, 0, 0.50)",
   "&:hover": {
     backgroundColor: "rgba(0, 0, 0, 0.88)",
   },
@@ -44,20 +44,48 @@ const IconWrapper = styled("div")({
 const BottomBar = styled("div")({
   display: "flex",
   position: "absolute",
-  width: "200px",
-  height: "10px",
+  width: "100%",
+  height: "20%",
   bottom: "0",
-  backgroundColor: "black",
+  backgroundColor: "rgba(0, 0, 0, 0.62)",
+  borderBottomRightRadius: 14,
+  borderBottomLeftRadius: 14,
 });
+
+type DotProps = {
+  active: boolean;
+};
+
+const Dot = styled("div")<DotProps>(({ active }) => ({
+  width: "10px",
+  height: "10px",
+  borderRadius: "50%",
+  backgroundColor: active ? "white" : "grey",
+  marginRight: "10px",
+  marginTop: "24px",
+  cursor: "pointer",
+  transition: "background-color 0.3s ease",
+  "&:hover": {
+    backgroundColor: "white",
+  },
+}));
 
 export default function BoxSx() {
   //pole s obrázky
-  const images = [
-    bannerImage1,
-    bannerImage2,
-    bannerImage3,
-    bannerImage4,
-    bannerImage5,
+  const images = [bannerImage1, bannerImage2, bannerImage3, bannerImage5];
+
+  const imageText = [
+    "Soutěž Adapterra Awards",
+    "Využijte biopelnici zdarma ",
+    "Štvanická lávka nominována na titul Stavba roku 2023  ",
+    "Balíček pomoci Pražanům ",
+  ];
+
+  const imageSubText = [
+    "Online hlasování veřejnosti o Cenu sympatie",
+    "Pomůžete snížit množství směsného odpadu",
+    "V soutěži rozhoduje odborná porota a opět může hlasovat i veřejnost",
+    "Soubor opatření pro pražské domácnosti ohrožené inflací",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
@@ -89,18 +117,18 @@ export default function BoxSx() {
   return (
     <Box
       sx={{
-        border: 12,
+        border: 10,
         borderColor: "white",
         overflow: "hidden",
-        position: "relative",
+        position: "absolute",
         borderRadius: 3,
         marginLeft: "18%",
-        marginTop: 8,
+        top: "14%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         width: 800,
-        maxWidth: "50%",
+        maxWidth: "70%",
         height: 285,
         backgroundColor: "white",
         "&:hover": {},
@@ -141,6 +169,44 @@ export default function BoxSx() {
           <ArrowForwardIosIcon sx={{}} />
         </IconWrapper>
       </OuterWrapperForward>
+
+      <BottomBar>
+        <div
+          style={{
+            flex: 1,
+            paddingBottom: "2px",
+            paddingLeft: "10px",
+            color: "white",
+            alignContent: "left",
+            alignItems: "left",
+            justifyContent: "left",
+            display: "flex",
+          }}
+        >
+          {
+            <div style={{ marginTop: "4px" }}>
+              <div
+                style={{
+                  marginBottom: "5px",
+                  color: "white",
+                }}
+              >
+                {imageText[currentImageIndex]}
+              </div>
+              {imageSubText[currentImageIndex]}
+            </div>
+          }
+        </div>
+        <div style={{ display: "flex", paddingRight: "10px" }}>
+          {images.map((_, index) => (
+            <Dot
+              key={index}
+              active={currentImageIndex === index}
+              onClick={() => setCurrentImageIndex(index)}
+            />
+          ))}
+        </div>
+      </BottomBar>
     </Box>
   );
 }

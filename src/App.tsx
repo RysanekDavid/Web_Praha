@@ -3,6 +3,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./App.css";
 import ResponsiveAppBar from "./components/AppBar";
 import Banner from "./components/Banner";
+import Council from "./components/Council";
 
 const customTheme = createTheme({
   breakpoints: {
@@ -20,7 +21,7 @@ function App() {
   return (
     <ThemeProvider theme={customTheme}>
       <ResponsiveAppBar />
-      <Banner />
+      <Banner /> <Council />
     </ThemeProvider>
   );
 }
